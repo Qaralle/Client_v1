@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Clenttt:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Clenttt_jar</output-path>
+    <root id="archive" name="Clenttt.jar">
+      <element id="module-output" name="Clenttt" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../ColClass_v1/out/artifacts/ColClass_jar/ColClass.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
