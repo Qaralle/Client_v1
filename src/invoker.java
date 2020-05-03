@@ -7,5 +7,5 @@ import java.net.UnknownHostException;
  * @author Maxim Antonov and Andrey Lyubkin
  */
 public interface invoker {
-    void interactiveMod(String del) throws IOException, SocketException, UnknownHostException;
+    void interactiveMod(String del, int port) throws IOException, SocketException, UnknownHostException, InterruptedException;
 }
