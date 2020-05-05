@@ -9,6 +9,9 @@ import java.net.InetAddress;
 import java.net.SocketTimeoutException;
 import java.util.Scanner;
 
+/**
+ * Класс, реализующий отправку запросов серверу
+ */
 public class Sender implements Runnable{
     protected String userCommand;
     protected String[] userCommand_;
@@ -316,6 +319,12 @@ public class Sender implements Runnable{
 
         //}else break;
     }
+
+    /**
+     * Сериаллизаия команды
+     * @param ob Команда, которую нужно сериализовать
+     * @return Массив байт, содержащий команду в пригодном для отправки виде
+     */
     private byte[] serialaze(CommandA ob){
 
         try{
@@ -333,6 +342,11 @@ public class Sender implements Runnable{
         return null;
 
     }
+
+    /**
+     * Отправка запроса на сервер
+     * @param data Запрос серверу
+     */
     private void sendSmth(CommandA data) throws IOException {
         InetAddress IPAddress = InetAddress.getByName(null);
         sentence = data;

@@ -4,7 +4,7 @@ import java.util.Map;
 
 
 /**
- * Абстрактный класс, выполняющий функци инвокера
+ * Класс, выполняющий функци инвокера
  * @author Maxim Antonov and Andrey Lyubkin
  */
 public class Validator3000 implements invoker {
@@ -24,6 +24,12 @@ public class Validator3000 implements invoker {
     {
         ACCESS="DEFAULT";
     }
+
+    /**
+     * Старт работы
+     * @param del символ приглашения к вводу
+     * @param port Порт клиента
+     */
     @Override
     public void interactiveMod(String del, int port) throws IOException, SocketException, UnknownHostException, InterruptedException {
 

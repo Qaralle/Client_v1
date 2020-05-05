@@ -2,10 +2,14 @@ import java.io.IOException;
 import java.net.SocketException;
 import java.util.Scanner;
 
-public class ClientMain
-{
-    public static void main(String args[]) throws Exception
-    {
+/**
+ * Основной класс, реализующий работу клиентского приложения
+ */
+public class ClientMain {
+    /**
+     * Запуск приложения
+     */
+    public static void main(String args[]) {
         Scanner scanner = new Scanner(System.in);
         OnExitThread onExitThread = new OnExitThread();
         Runtime.getRuntime().addShutdownHook(onExitThread);
@@ -29,12 +33,6 @@ public class ClientMain
                 }
             }
         }
-
-/*        BufferedReader inFromUser =
-                new BufferedReader(new InputStreamReader(System.in));*/
-
-        String str = null;
-        String str2 = str;
 
     }
 }

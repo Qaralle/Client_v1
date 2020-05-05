@@ -3,6 +3,9 @@ import java.net.DatagramPacket;
 import java.net.SocketTimeoutException;
 import java.util.Optional;
 
+/**
+ * Класс, реализующий поток получения ответов от сервера
+ */
 public class Receiver implements Runnable {
     private String string_to_print;
     byte[] receiveData = new byte[4*1024];
@@ -18,6 +21,10 @@ public class Receiver implements Runnable {
             }
         }
     }
+
+    /**
+     * Получить что-либо от сервера
+     */
     private void getSmth() throws IOException {
         string_to_print="stroka kotoryy ti nikogda ne bydesh ispolzovat" ;
         Validator3000.clientSocket.setSoTimeout(5000);

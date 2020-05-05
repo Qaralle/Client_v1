@@ -6,6 +6,9 @@ import java.io.ObjectOutputStream;
 import java.net.DatagramPacket;
 import java.net.InetAddress;
 
+/**
+ * Класс, реализующий поток отправки серверу информации о завершении работы клиентского приложения
+ */
 public class OnExitThread extends Thread{
     private String login;
 
