@@ -1,14 +1,6 @@
-import packet.CommandA;
-import packet.Country;
-import packet.WrongTypeOfFieldException;
-import sun.nio.ch.DefaultAsynchronousChannelProvider;
-
 import java.io.*;
 import java.net.*;
 import java.util.Map;
-import java.util.Optional;
-import java.util.Scanner;
-import java.util.concurrent.Executors;
 
 
 /**
@@ -17,12 +9,15 @@ import java.util.concurrent.Executors;
  */
 public class Validator3000 implements invoker {
 
+    public Validator3000(OnExitThread thread){
+        this.thread=thread;
+    }
     //private boolean WORK=true;
     static String ACCESS;
 
     static byte[] finalReceiveData;
     static DatagramSocket clientSocket;
-
+    OnExitThread thread;
     protected Map<String, String> bufferMap;
     protected String[] bufferStringForArgs;
 
@@ -35,7 +30,7 @@ public class Validator3000 implements invoker {
         clientSocket = new DatagramSocket(port);
         System.out.print(del);
         Thread receiver = new Thread(new Receiver());
-        Thread Sanders = new Thread(new Sender());
+        Thread Sanders = new Thread(new Sender(thread));
         synchronized (ACCESS) {
             receiver.start();
             Sanders.start();
